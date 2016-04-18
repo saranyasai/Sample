@@ -1,12 +1,14 @@
 <!DOCTYPE html>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="en">
 <head>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+ <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+ <link rel="stylesheet" href="<c:url value="/resources/bootstrap-3.3.6-dist/css/bootstrap.min.css" />">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="<c:url value="/resources/bootstrap-3.3.6-dist/js/bootstrap.min.js" />"></script>
   <style>
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
@@ -26,9 +28,9 @@
   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
   <ul class="nav navbar-nav navbar-right">
-      <li><a href="index.jsp"><span class="glyphicon glyphicon-user"></span>Login</a></li>
-      <li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span>Register</a></li>
-      <li><a href="About.jsp">About Us</a>
+      <li><a href="index"><span class="glyphicon glyphicon-user"></span>Login</a></li>
+      <li><a href="login"><span class="glyphicon glyphicon-log-in"></span>Register</a></li>
+      <li><a href="About">About Us</a>
     </ul>
   </div>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -43,15 +45,18 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="music5.jpg" alt="Chania" width="260" height="345">
+        
+        <img src="<c:url value='/resources/images/music5.jpg'/>" height="200" width="300"/>
       </div>
 
       <div class="item">
-        <img src="music2.jpg" alt="Chania" width="260" height="345">
+        
+         <img src="<c:url value='/resources/images/music2.jpg'/>" height="200" width="300"/>
       </div>
     
       <div class="item">
-        <img src="music3.jpg" alt="Flower" width="260" height="345">
+       
+         <img src="<c:url value='/resources/images/music3.jpg'/>" height="200" width="300"/>
       </div>
 
       
@@ -70,5 +75,19 @@
  
 </div>
  <center><h1 style="color:red">Enjoy the Rhythm of Music</h1></center>
+ <form method="post"></form>
+<div class="table-responsive">
+<center>
+<div class="table">
+ <a href="content?dd=img1"><img src="<c:url value='/resources/images/music7.jpg'/>" height="200" width="300" alt="record"/></a>
+
+ <a href="content?dd=img2"><img src="<c:url value='/resources/images/music8.jpg'/>" height="200" width="300"/></a>
+ 
+ <a href="content?dd=img3"><img src="<c:url value='/resources/images/music9.jpg'/>" height="200" width="300"/></a>
+ </div>
+ <h1><a href="content?dd=img4">All Products</a></h1>
+ </center>
+</div>
+</form>
 </body>
 </html>
